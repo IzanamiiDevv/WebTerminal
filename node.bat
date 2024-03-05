@@ -1,3 +1,3 @@
 @echo off
-cd /d "path\to\your\ClientApp"
+cd /d "ClientApp"
 start cmd /k node app.js
