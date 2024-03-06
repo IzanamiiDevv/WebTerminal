@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using CMD;
 
 namespace WebTerminal.Controllers
 {
@@ -29,6 +30,7 @@ namespace WebTerminal.Controllers
 
             // For example:
             string receivedData = data.key1;
+            CMD.CMD.RunTerminalCommand(receivedData);
 
             string responseMessage = "Data received successfully";
             return Ok(new {
