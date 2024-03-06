@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Console(){
+    const [input, setInput] = useState('')
     return(
         <section>
+            <input type="text" onChange={(e)=>{
+                setInput(e.target.value)
+            }}/>
             <button onClick={()=>{
-                Fetch()
+                Fetch(input)
             }}>Click</button>
         </section>
     )
@@ -12,14 +16,23 @@ function Console(){
 
 export default Console;
 
-function Fetch(){
-    fetch('/server/post',{
-        
+function Fetch(command) {
+    const postData = {
+        key1: command,
+    };
+
+    fetch('/server/post', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(postData)
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.text);
-    }).catch(err => {
-        console.err(err);
+        console.log(data.message);
+    })
+    .catch(err => {
+        console.error(err);
     });
 }
