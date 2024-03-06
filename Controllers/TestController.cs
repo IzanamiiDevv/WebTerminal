@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NET_Core_with_React.js.Controllers;
+namespace WebTerminal.Controllers;
 
 [ApiController]
 [Route("/server")]

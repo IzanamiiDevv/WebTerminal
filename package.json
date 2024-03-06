@@ -4,8 +4,8 @@
   "description": "",
   "main": "Program.cs",
   "scripts": {
-    "start": "npm-run-all api server",
-    "api": "dotnet run",
+    "start": "npm-run-all server api",
+    "api": "api.bat",
     "server": "node.bat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
