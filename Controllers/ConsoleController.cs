@@ -36,9 +36,9 @@ namespace WebTerminal.Controllers
         }
 
         public class YourModelType
-{
-    public string key1 { get; set; }
-}
+        {
+            public string key1 { get; set; }
+        }
 
     }
 }
