@@ -25,16 +25,12 @@ namespace WebTerminal.Controllers
         [HttpPost("post")]
         public async Task<IActionResult> PostData([FromBody] YourModelType data)
         {
-            // Handle the incoming data here
-            // YourModelType should be replaced with the actual model type of the incoming data
-
-            // For example:
             string receivedData = data.key1;
             CMD.CMD.RunTerminalCommand(receivedData);
 
             string responseMessage = "Data received successfully";
             return Ok(new {
-                 Text = responseMessage,
+                Text = responseMessage,
                  Message = receivedData
                  });
         }
